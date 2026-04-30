@@ -1,0 +1,21 @@
+/* Tailwind v4'ü içeri aktarır (Eski @tailwind komutlarının yerini aldı) */
+@import "tailwindcss";
+
+/* YENİ: Tailwind v4 için manuel (butonla) Gece Modu ayarı */
+@variant dark (&:where(.dark, .dark *));
+
+/* Tüm sayfanın temel gece/gündüz renkleri */
+@layer base {
+  body {
+    @apply bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300;
+  }
+}
+
+/* Scrollbar Gizleme Yaması */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
